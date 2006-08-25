@@ -1,0 +1,12 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Win32-PerlExe-Env.t
+lib/Win32/PerlExe/Env.pm
+exe/res/icons/Get_Info.ico
+exe/Win32-PerlExe-Env.bat
+exe/Win32-PerlExe-Env.exe
+exe/Win32-PerlExe-Env.perlapp
+exe/Win32-PerlExe-Env.pl
+META.yml                                 Module meta-data (added by MakeMaker)
