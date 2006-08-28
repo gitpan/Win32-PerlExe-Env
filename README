@@ -1,4 +1,4 @@
-Win32-PerlExe-Env version 0.01
+Win32-PerlExe-Env version 0.02
 ==============================
 
 A README file is required for CPAN modules since CPAN extracts the
@@ -13,13 +13,16 @@ Win32::PerlExe::Env - Get environment informations of Win32 Perl executables
 
 DESCRIPTION
 
-Win32::PerlExe::Env supports special 'build-in' environment informations of
+Win32::PerlExe::Env provides special 'build-in' environment informations of
 Perl .exe files.
 
-The main goal of this module version is to get the internal temporary directory
-of packed Perl executables regardless of the used packer.
+The main goal of this module version is to receive the internal temporary
+directory of packed Perl executables regardless of the used packer.
 
-This version supports ActiveState PDK packer.
+Additional packer specific environment informations like version, packername,
+etc. will be supported.
+
+This version assists ActiveState PDK packers.
 
 INSTALLATION
 

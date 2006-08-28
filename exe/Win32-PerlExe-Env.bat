@@ -1,6 +1,6 @@
 @echo off
 echo ===========================================================================
-echo $Id: Win32-PerlExe-Env.bat 399 2006-08-25 17:25:26Z HVRTWall $
+echo $Id: Win32-PerlExe-Env.bat 411 2006-08-27 18:54:00Z HVRTWall $
 echo Copyright (c) 2006 Thomas Walloschke (thw@cpan.org). All rights reserved.
 echo ===========================================================================
 

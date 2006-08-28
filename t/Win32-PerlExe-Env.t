@@ -1,5 +1,5 @@
-# =============================================================================
-# $Id: Win32-PerlExe-Env.t 402 2006-08-25 17:32:46Z HVRTWall $
+# ==============================================================================
+# $Id: Win32-PerlExe-Env.t 420 2006-08-28 08:26:38Z HVRTWall $
 # Copyright (c) 2005-2006 Thomas Walloschke (thw@cpan.org). All rights reserved.
 # Module Basic Test of Win32::PerlExe::Env
 # ==============================================================================
@@ -11,22 +11,23 @@
 # -- Module Basic Test
 #    Win32::PerlExe::Env ':all'
 
-#use Test::More tests => 8;
-use Test::More 'no_plan';
-BEGIN { use_ok('Win32::PerlExe::Env', qw(:all)) };
+#use Test::More 'no_plan';
+use Test::More tests => 8;
+
+BEGIN { use_ok( 'Win32::PerlExe::Env', qw(:all) ) }
 
 #########################
 # -- Scripts always receives 'undef' - this is ok!
 
 # -- :tmp
-ok( ! defined get_tmpdir(),     'get_tmpdir=undef');
-ok( ! defined get_filename(),   'get_filename=undef');
+ok( !defined get_tmpdir(),   'get_tmpdir    undef' );
+ok( !defined get_filename(), 'get_filename  undef' );
 
 # -- :vars
-ok( ! defined get_build(),      'get_build=undef');
-ok( ! defined get_perl5lib(),   'get_perl5lib=undef');
-ok( ! defined get_runlib(),     'get_runlib=undef');
-ok( ! defined get_tool(),       'get_tool=undef');
-ok( ! defined get_version(),    'get_version=undef');
+ok( !defined get_build(),    'get_build     undef' );
+ok( !defined get_perl5lib(), 'get_perl5lib  undef' );
+ok( !defined get_runlib(),   'get_runlib    undef' );
+ok( !defined get_tool(),     'get_tool      undef' );
+ok( !defined get_version(),  'get_version   undef' );
 
 #########################
