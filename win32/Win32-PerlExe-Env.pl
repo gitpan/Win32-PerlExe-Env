@@ -1,5 +1,5 @@
 # =============================================================================
-# $Id: Win32-PerlExe-Env.pl 413 2006-08-27 22:01:26Z HVRTWall $
+# $Id: Win32-PerlExe-Env.pl 489 2006-09-09 20:07:31Z HVRTWall $
 # Copyright (c) 2005-2006 Thomas Walloschke (thw@cpan.org). All rights reserved.
 # Test program for Win32::PerlExe::Env
 # ==============================================================================
@@ -32,8 +32,7 @@
         $vars eq 'tmp'
         ? qw(tmpdir filename)
 
-        : $vars eq 'vars'
-        ? qw(BUILD PERL5LIB RUNLIB TOOL VERSION)
+        : $vars eq 'vars' ? qw(BUILD PERL5LIB RUNLIB TOOL VERSION)
 
         : $vars eq 'all'
         ? qw(tmpdir filename BUILD PERL5LIB RUNLIB TOOL VERSION)
@@ -56,15 +55,16 @@ Usage: $progname [:select] [filename]
     :vars           Print BUILD, PERL5LIB, RUNLIB, TOOL and VERSION
     :all            Print :tmp and :vars
     :DEFAULT        Print tmpdir
-    filename        Use as bound file to identify tmpdir
+    filename        Use filename to extract bound file to identify tmpdir
     
     Defaults
-        No select   Set select to :DEFAULT
+        No select   Set :select to ':DEFAULT'
         No filename Set filename to defaults 'Win32|PerlExe|Env' 
 EOT
     }
 
 =pod
+
 =head1 NAME
 
 Win32-PerlExe-Env.pl -- Test program for Win32::PerlExe::Env
@@ -83,7 +83,9 @@ Win32-PerlExe-Env.pl -- Test program for Win32::PerlExe::Env
 =head1 OPTIONS
 
     Win32-PerlExe-Env [selection] [filename]
-    
+
+=over 2
+
 =item :tmp
 
 Print tmpdir and filename (of default internal file)
@@ -111,6 +113,8 @@ Set selection to :DEFAULT
 =item Missing filename
 
 Set filename to defaults 'Win32|PerlExe|Env'
+
+=back
 
 =head1 DESCRIPTION
 
@@ -162,10 +166,9 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.6 or,
 at your option, any later version of Perl 5 you may have available.
 
-
 =head1 DATE
 
-Last changed $Date: 2006-08-28 00:01:26 +0200 (Mo, 28 Aug 2006) $.
+Last changed $Date: 2006-09-09 22:07:31 +0200 (Sa, 09 Sep 2006) $.
 
 =cut
 

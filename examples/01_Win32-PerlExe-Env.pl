@@ -1,5 +1,5 @@
 # ==============================================================================
-# $Id: 01_Win32-PerlExe-Env.pl 12 2006-09-08 19:11:07Z HVRTWall $
+# $Id: 01_Win32-PerlExe-Env.pl 23 2006-09-09 20:51:29Z HVRTWall $
 # Copyright (c) 2005-2006 Thomas Walloschke (thw@cpan.org). All rights reserved.
 # Test program for Win32::PerlExe::Env
 # ==============================================================================
@@ -34,7 +34,7 @@ at your option, any later version of Perl 5 you may have available.
 
 =head1 DATE
 
-Last changed $Date: 2006-09-08 21:11:07 +0200 (Fr, 08 Sep 2006) $.
+Last changed $Date: 2006-09-09 22:51:29 +0200 (Sa, 09 Sep 2006) $.
 
 =cut
 

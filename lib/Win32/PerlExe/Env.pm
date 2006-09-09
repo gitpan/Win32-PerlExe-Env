@@ -1,5 +1,5 @@
 # =============================================================================
-# $Id: Env.pm 421 2006-08-28 08:37:52Z HVRTWall $
+# $Id: Env.pm 486 2006-09-09 18:48:00Z HVRTWall $
 # Copyright (c) 2005-2006 Thomas Walloschke (thw@cpan.org). All rights reserved.
 # Get environment informations of Win32 Perl executables
 # ==============================================================================
@@ -33,11 +33,11 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our ( $VERSION, $v, $_VERSION );
 
 # -- CPAN VERSION (='major.minor{2}')
-$VERSION = do { my @r = ( ( $v = q<Version value="0.03.03"> ) =~ /\d+/g ); splice( @r, 2 ); sprintf "%d" . ".%02d" x $#r, @r };
+$VERSION = do { my @r = ( ( $v = q<Version value="0.4.1"> ) =~ /\d+/g ); splice( @r, 2 ); sprintf "%d" . ".%02d" x $#r, @r };
 
 # -- Mumified VERSION (='major.minor{3}release{3}revision{3}')
 $_VERSION = do {
-    my @r = ( $v =~ /\d+/g, q$Revision: 484 $ =~ /\d+/g );
+    my @r = ( $v =~ /\d+/g, q$Revision: 486 $ =~ /\d+/g );
     sprintf "%d." . "%03d" x $#r, @r;
 };
 
@@ -197,7 +197,7 @@ Win32::PerlExe::Env - Get environment informations of Win32 Perl executables
 =head1 VERSION
 
 This documentation refers to Win32::PerlExe::Env Version 0.02.05
-$Revision: 421 $
+$Revision: 486 $
 
 Precautions: Alpha Release.
 
@@ -416,6 +416,6 @@ at your option, any later version of Perl 5 you may have available.
 
 =head1 DATE
 
-Last changed $Date: 2006-08-28 10:37:52 +0200 (Mo, 28 Aug 2006) $.
+Last changed $Date: 2006-09-09 20:48:00 +0200 (Sa, 09 Sep 2006) $.
 
 =cut
