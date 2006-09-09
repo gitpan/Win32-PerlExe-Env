@@ -28,7 +28,7 @@ Version-CompanyName:
 Version-FileDescription: Test of Win32::PerlExe::Env
 Version-FileVersion: 0.2.5
 Version-InternalName: Win32-PerlExe-Env.pl
-Version-LegalCopyright: Copyright (c) 2006 Thomas Walloschke.
+Version-LegalCopyright: Copyright (c) 2006 Thomas Walloschke. All rights reserved.
 Version-LegalTrademarks: 
 Version-OriginalFilename: Win32-PerlExe-Env.pl
 Version-ProductName: Test of Win32::PerlExe::Env

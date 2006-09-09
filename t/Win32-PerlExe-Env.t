@@ -1,5 +1,5 @@
 # ==============================================================================
-# $Id: Win32-PerlExe-Env.t 420 2006-08-28 08:26:38Z HVRTWall $
+# $Id: Win32-PerlExe-Env.t 485 2006-09-08 22:54:18Z HVRTWall $
 # Copyright (c) 2005-2006 Thomas Walloschke (thw@cpan.org). All rights reserved.
 # Module Basic Test of Win32::PerlExe::Env
 # ==============================================================================
@@ -11,8 +11,8 @@
 # -- Module Basic Test
 #    Win32::PerlExe::Env ':all'
 
-#use Test::More 'no_plan';
-use Test::More tests => 8;
+use Test::More 'no_plan';
+#use Test::More tests => 8;
 
 BEGIN { use_ok( 'Win32::PerlExe::Env', qw(:all) ) }
 

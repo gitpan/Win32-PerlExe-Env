@@ -6,7 +6,7 @@
 
 package Win32::PerlExe::Env;
 
-CHECK { warn "Warning: No MSWin32 System" unless $^O eq 'MSWin32' }
+BEGIN { warn "Warning: No MSWin32 System" unless $^O eq 'MSWin32' }
 
 # -- Pragmas
 use 5.008006;
@@ -24,14 +24,24 @@ our %EXPORT_TAGS = (
     'tmp'  => [qw(get_tmpdir get_filename)],
     'vars' => [qw(get_build get_perl5lib get_runlib get_tool get_version)],
 );
-$EXPORT_TAGS{all} =
-    [ map {$_} @{ $EXPORT_TAGS{tmp} }, @{ $EXPORT_TAGS{vars} } ];
+
+#$EXPORT_TAGS{all} =
+#    [ map {$_} @{ $EXPORT_TAGS{tmp} }, @{ $EXPORT_TAGS{vars} } ];
+$EXPORT_TAGS{all} = [ map { @{ $EXPORT_TAGS{$_} } } keys %EXPORT_TAGS ];
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
-# -- Version (reformatted 'major.minor(3)release(3)revision(3)')
-our $VERSION = do { my @r = ( q<Version value="0.02.05"> =~ /\d+/g, q$Revision: 421 $ =~ /\d+/g ); sprintf "%d." . "%03d" x $#r, @r };
+our ( $VERSION, $v, $_VERSION );
 
-# -- Build default filenames from package chunks
+# -- CPAN VERSION (='major.minor{2}')
+$VERSION = do { my @r = ( ( $v = q<Version value="0.03.03"> ) =~ /\d+/g ); splice( @r, 2 ); sprintf "%d" . ".%02d" x $#r, @r };
+
+# -- Mumified VERSION (='major.minor{3}release{3}revision{3}')
+$_VERSION = do {
+    my @r = ( $v =~ /\d+/g, q$Revision: 484 $ =~ /\d+/g );
+    sprintf "%d." . "%03d" x $#r, @r;
+};
+
+# -- Build default filenames from package name chunks
 my $_def_filenames = { map { $_ => 1 } split q{::}, __PACKAGE__ };
 
 # -- Get internal temporary working dir of executable
@@ -193,6 +203,8 @@ Precautions: Alpha Release.
 
 =head1 SYNOPSYS
 
+=over 2
+
 =item :DEFAULT
 
     use Win32::PerlExe::Env;
@@ -218,6 +230,8 @@ Precautions: Alpha Release.
         map { uc $_ => eval "&get_$_" }
             map {lc} qw(tmpdir filename BUILD PERL5LIB RUNLIB TOOL VERSION)
     );
+    
+=back
 
 =head1 DESCRIPTION
 
@@ -233,6 +247,8 @@ etc. will be supported.
 This version assists ActiveState PDK packers.
 
 =head2 EXPORT
+
+=over 2
 
 =item :DEFAULT
 
@@ -250,7 +266,11 @@ This version assists ActiveState PDK packers.
 
   get_tmpdir get_filename get_build get_perl5lib get_runlib get_tool get_version
 
+=back
+
 =head1 FUNCTIONS
+
+=over 2
 
 =item * get_tmpdir()
 
@@ -298,6 +318,8 @@ currently running executable has been produced by this packer (=tool).
 
 Get the packers version number: 'major.minor.release', but not including the
 build number.
+
+=back
 
 =head1 DIAGNOSTICS
 
